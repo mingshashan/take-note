@@ -1,0 +1,6 @@
+com\mingshashan\note\domain\Category.class
+com\mingshashan\note\domain\service\admin\UserService.class
+com\mingshashan\note\domain\service\ArticleService.class
+com\mingshashan\note\domain\admin\User.class
+com\mingshashan\note\domain\Article.class
+com\mingshashan\note\domain\Tag.class

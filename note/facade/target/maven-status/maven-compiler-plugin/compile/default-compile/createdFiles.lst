@@ -1,0 +1,9 @@
+com\mingshashan\note\facade\request\ArticleDeleteVO.class
+com\mingshashan\note\facade\request\ArticleUpdateVO.class
+com\mingshashan\note\facade\UserVO.class
+com\mingshashan\note\facade\admin\UserFacade.class
+com\mingshashan\note\facade\response\ResultCode.class
+com\mingshashan\note\facade\blog\ArticleFacade.class
+com\mingshashan\note\facade\request\ArticleCreateVO.class
+com\mingshashan\note\facade\response\ArticleVO.class
+com\mingshashan\note\facade\response\Result.class
