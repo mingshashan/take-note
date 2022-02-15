@@ -24,3 +24,9 @@ hs_err_pid*
 
 .idea
 *.iml
+pom.properties
+*.lst
+target
+note/facade/target/generated-sources/
+*/target/*
+note/facade/target/*
