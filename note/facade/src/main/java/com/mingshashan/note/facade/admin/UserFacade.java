@@ -1,11 +1,11 @@
 package com.mingshashan.note.facade.admin;
 
-import com.mingshashan.note.facade.UserVO;
-
 /**
  * user facade
+ *
+ * @author mingshashan
  */
 public interface UserFacade {
 
-    UserVO createUser(UserVO userVO);
+
 }

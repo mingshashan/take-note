@@ -1,10 +1,12 @@
-package com.mingshashan.note.domain;
+package com.mingshashan.note.domain.blog;
 
 
 import java.util.List;
 
 /**
- * 领域对象：Article
+ * Article
+ *
+ * @author mingshashan
  */
 public class Article {
 
@@ -20,9 +22,8 @@ public class Article {
 
     private String content;
 
-    private List<Tag> tags;
+    private List<Tag> tagList;
 
-    private List<Category> categories;
-
+    private List<Category> categoryList;
 
 }
