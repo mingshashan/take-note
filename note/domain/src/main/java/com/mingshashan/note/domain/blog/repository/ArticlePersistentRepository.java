@@ -5,12 +5,13 @@ package com.mingshashan.note.domain.blog.repository;
  *
  * @author mingshashan
  */
-public interface IArticlePersistentRepository {
+public interface ArticlePersistentRepository {
 
     /**
      * delete article by id
      *
      * @param articleId
+     * @return
      */
-    void deleteArticleById(Long articleId);
+    Long deleteArticleById(Long articleId);
 }

@@ -27,7 +27,8 @@ public interface IArticlePersistentService {
      * delete article by id
      *
      * @param articleId
+     * @return
      */
-    void deleteArticleById(Long articleId);
+    Long deleteArticleById(Long articleId);
 
 }

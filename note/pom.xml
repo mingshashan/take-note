@@ -27,6 +27,7 @@
         <mybatis.plus.version>3.4.2</mybatis.plus.version>
         <lombok.version>1.18.12</lombok.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencies>
@@ -74,8 +75,19 @@
             </dependency>
             <dependency>
                 <groupId>com.mingshashan.note</groupId>
+                <artifactId>domain</artifactId>
+                <version>${reversion}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mingshashan.note</groupId>
                 <artifactId>common</artifactId>
                 <version>${reversion}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
