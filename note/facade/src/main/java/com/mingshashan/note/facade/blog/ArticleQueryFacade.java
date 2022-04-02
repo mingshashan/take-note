@@ -1,6 +1,6 @@
 package com.mingshashan.note.facade.blog;
 
-import com.mingshashan.note.facade.response.Result;
+import com.mingshashan.note.common.result.Result;
 import com.mingshashan.note.facade.vo.blog.ArticleVO;
 
 import javax.validation.constraints.NotNull;

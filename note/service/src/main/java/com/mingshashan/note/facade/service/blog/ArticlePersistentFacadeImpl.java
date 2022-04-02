@@ -1,24 +1,25 @@
 package com.mingshashan.note.facade.service.blog;
 
-import com.mingshashan.note.domain.blog.service.ArticleChangeService;
-import com.mingshashan.note.facade.blog.ArticleChangeFacade;
+import com.mingshashan.note.common.result.Result;
+import com.mingshashan.note.domain.blog.service.IArticlePersistentService;
+import com.mingshashan.note.facade.blog.ArticlePersistentFacade;
 import com.mingshashan.note.facade.vo.blog.ArticleVO;
-import com.mingshashan.note.facade.response.Result;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * article persistent service
  * @author mingshashan
  */
 @RestController
 @RequestMapping("/article/change")
-public class ArticleChangeFacadeImpl implements ArticleChangeFacade {
+public class ArticlePersistentFacadeImpl implements ArticlePersistentFacade {
 
-    private final ArticleChangeService articleChangeService;
+    private final IArticlePersistentService articlePersistentService;
 
-    public ArticleChangeFacadeImpl(ArticleChangeService articleChangeService) {
-        this.articleChangeService = articleChangeService;
+    public ArticlePersistentFacadeImpl(IArticlePersistentService articlePersistentService) {
+        this.articlePersistentService = articlePersistentService;
     }
 
     @PostMapping("/create")
@@ -36,6 +37,7 @@ public class ArticleChangeFacadeImpl implements ArticleChangeFacade {
     @PostMapping("/delete")
     @Override
     public Result<Void> deleteArticleById(Long articleId) {
-        return null;
+        articlePersistentService.deleteArticleById(articleId);
+        return Result.<Void>builder().build();
     }
 }

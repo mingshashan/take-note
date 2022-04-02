@@ -7,7 +7,7 @@ import com.mingshashan.note.domain.blog.Article;
  *
  * @author mingshashan
  */
-public interface ArticleChangeService {
+public interface IArticlePersistentService {
 
     /**
      * create article
@@ -27,7 +27,8 @@ public interface ArticleChangeService {
      * delete article by id
      *
      * @param articleId
+     * @return
      */
-    void deleteArticleById(Long articleId);
+    Long deleteArticleById(Long articleId);
 
 }

@@ -1,9 +1,9 @@
 package com.mingshashan.note.facade.service.blog;
 
+import com.mingshashan.note.common.result.Result;
 import com.mingshashan.note.domain.blog.Article;
 import com.mingshashan.note.domain.blog.service.ArticleQueryService;
 import com.mingshashan.note.facade.blog.ArticleQueryFacade;
-import com.mingshashan.note.facade.response.Result;
 import com.mingshashan.note.facade.service.converter.ArticleConverter;
 import com.mingshashan.note.facade.vo.blog.ArticleVO;
 
