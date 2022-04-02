@@ -1,8 +1,9 @@
 package com.mingshashan.note.facade.blog;
 
-import com.mingshashan.note.facade.response.Result;
+import com.mingshashan.note.common.result.Result;
 import com.mingshashan.note.facade.vo.blog.ArticleVO;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
@@ -11,7 +12,7 @@ import javax.validation.constraints.Positive;
  *
  * @author mingshashan
  */
-public interface ArticleChangeFacade {
+public interface ArticlePersistentFacade {
 
     /**
      * create article
@@ -31,6 +32,7 @@ public interface ArticleChangeFacade {
 
     /**
      * delete article by id
+     *
      * @param articleId
      * @return
      */

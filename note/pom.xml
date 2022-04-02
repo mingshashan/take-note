@@ -6,7 +6,7 @@
 
     <groupId>com.mingshashan.note</groupId>
     <artifactId>note</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>${reversion}</version>
     <modules>
         <module>bootstrap</module>
         <module>domain</module>
@@ -71,6 +71,11 @@
                 <artifactId>mapstruct</artifactId>
                 <version>${mapstruct.version}</version>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.mingshashan.note</groupId>
+                <artifactId>common</artifactId>
+                <version>${reversion}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

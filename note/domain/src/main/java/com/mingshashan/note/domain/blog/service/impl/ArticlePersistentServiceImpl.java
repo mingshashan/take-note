@@ -1,7 +1,7 @@
 package com.mingshashan.note.domain.blog.service.impl;
 
 import com.mingshashan.note.domain.blog.Article;
-import com.mingshashan.note.domain.blog.service.ArticleChangeService;
+import com.mingshashan.note.domain.blog.service.IArticlePersistentService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  * @author mingshashan
  */
 @Service
-public class ArticleChangeServiceImpl implements ArticleChangeService {
+public class ArticlePersistentServiceImpl implements IArticlePersistentService {
     @Override
     public void createArticle(Article article) {
 
