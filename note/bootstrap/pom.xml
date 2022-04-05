@@ -30,6 +30,11 @@
             <artifactId>service</artifactId>
             <version>${reversion}</version>
         </dependency>
+        <dependency>
+            <groupId>com.mingshashan.note</groupId>
+            <artifactId>repository</artifactId>
+            <version>${reversion}</version>
+        </dependency>
     </dependencies>
 
     <build>
