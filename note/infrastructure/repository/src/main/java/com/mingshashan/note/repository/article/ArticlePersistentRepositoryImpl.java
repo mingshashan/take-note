@@ -9,9 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ArticlePersistentRepositoryImpl implements ArticlePersistentRepository {
 
-
     @Override
     public Long deleteArticleById(Long articleId) {
-
+        return articleId;
     }
 }
