@@ -1,6 +1,9 @@
 package com.mingshashan.note.domain.blog;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 /**
@@ -8,6 +11,8 @@ import java.util.List;
  *
  * @author mingshashan
  */
+@Setter
+@Getter
 public class Article {
 
     private String id;
