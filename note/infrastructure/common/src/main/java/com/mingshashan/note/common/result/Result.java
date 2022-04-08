@@ -1,14 +1,11 @@
 package com.mingshashan.note.common.result;
 
-import lombok.Builder;
-
 /**
  * result module
  *
  * @param <T>
  * @author mingshashan
  */
-@Builder
 public class Result<T> {
 
     /**
@@ -58,5 +55,16 @@ public class Result<T> {
                 ResponseCode.OK.getCode(),
                 ResponseCode.OK.getMessage(),
                 data);
+    }
+
+    /**
+     * default ok method
+     * message code:
+     *
+     * @param <T>
+     * @return
+     */
+    public static <T> Result<T> ok() {
+        return Result.ok(null);
     }
 }

@@ -26,9 +26,10 @@
         <springboot.version>2.6.3</springboot.version>
         <mybatis.plus.version>3.4.3.4</mybatis.plus.version>
         <lombok.version>1.18.12</lombok.version>
-        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <org.mapstruct.version>1.5.0.RC1</org.mapstruct.version>
         <junit.version>4.13.2</junit.version>
         <mybatis.spring.boot.version>2.2.2</mybatis.spring.boot.version>
+        <log4j2.version>2.17.1</log4j2.version>
     </properties>
 
     <dependencies>
@@ -36,6 +37,10 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
     </dependencies>
 
@@ -70,8 +75,15 @@
             <dependency>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct</artifactId>
-                <version>${mapstruct.version}</version>
+                <version>${org.mapstruct.version}</version>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>${log4j2.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>com.mingshashan.note</groupId>
@@ -97,4 +109,32 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${org.mapstruct.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

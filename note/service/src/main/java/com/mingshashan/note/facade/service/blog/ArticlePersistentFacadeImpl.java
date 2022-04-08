@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * article persistent service
+ *
  * @author mingshashan
  */
 @RestController
-@RequestMapping("/article/change")
+@RequestMapping("/articles")
 public class ArticlePersistentFacadeImpl implements ArticlePersistentFacade {
 
     private final IArticlePersistentService articlePersistentService;
@@ -38,6 +39,6 @@ public class ArticlePersistentFacadeImpl implements ArticlePersistentFacade {
     @Override
     public Result<Void> deleteArticleById(Long articleId) {
         articlePersistentService.deleteArticleById(articleId);
-        return Result.<Void>builder().build();
+        return Result.ok();
     }
 }
