@@ -1,11 +1,13 @@
 package com.mingshashan.note.domain.blog.repository;
 
+import com.mingshashan.note.domain.blog.Article;
+
 /**
  * article persistent repository
  *
  * @author mingshashan
  */
-public interface ArticlePersistentRepository {
+public interface ArticleRepository {
 
     /**
      * delete article by id
@@ -14,4 +16,6 @@ public interface ArticlePersistentRepository {
      * @return
      */
     Long deleteArticleById(Long articleId);
+
+    Article getArticleById(Long articleId);
 }

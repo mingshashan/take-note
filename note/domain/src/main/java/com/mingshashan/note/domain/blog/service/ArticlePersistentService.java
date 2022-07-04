@@ -7,7 +7,7 @@ import com.mingshashan.note.domain.blog.Article;
  *
  * @author mingshashan
  */
-public interface IArticlePersistentService {
+public interface ArticlePersistentService {
 
     /**
      * create article

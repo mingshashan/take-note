@@ -1,31 +1,36 @@
 package com.mingshashan.note.facade.service.blog;
 
+import com.mingshashan.note.common.api.ApiVersion;
 import com.mingshashan.note.common.result.Result;
-import com.mingshashan.note.domain.blog.service.IArticlePersistentService;
+import com.mingshashan.note.domain.blog.service.ArticlePersistentService;
 import com.mingshashan.note.facade.blog.ArticlePersistentFacade;
 import com.mingshashan.note.facade.vo.blog.ArticleVO;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
 
 /**
  * article persistent service
  *
  * @author mingshashan
  */
+@ApiVersion(version = "v1")
 @RestController
 @RequestMapping("/articles")
 public class ArticlePersistentFacadeImpl implements ArticlePersistentFacade {
 
-    private final IArticlePersistentService articlePersistentService;
+    private final ArticlePersistentService articlePersistentService;
 
-    public ArticlePersistentFacadeImpl(IArticlePersistentService articlePersistentService) {
+    public ArticlePersistentFacadeImpl(ArticlePersistentService articlePersistentService) {
         this.articlePersistentService = articlePersistentService;
     }
 
     @PostMapping("/create")
     @Override
-    public Result<Long> createArticle(ArticleVO articleVO) {
+    public Result<Long> createArticle(@Valid ArticleVO articleVO) {
         return null;
     }
 
@@ -35,7 +40,7 @@ public class ArticlePersistentFacadeImpl implements ArticlePersistentFacade {
         return null;
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping
     @Override
     public Result<Void> deleteArticleById(Long articleId) {
         articlePersistentService.deleteArticleById(articleId);

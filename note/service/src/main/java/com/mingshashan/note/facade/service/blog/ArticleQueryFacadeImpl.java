@@ -35,4 +35,9 @@ public class ArticleQueryFacadeImpl implements ArticleQueryFacade {
         ArticleVO articleVO = articleConverter.article2ArticleVO(article);
         return Result.ok(articleVO);
     }
+
+    @Override
+    public Result saveArticle(ArticleVO articleVO) {
+        return null;
+    }
 }

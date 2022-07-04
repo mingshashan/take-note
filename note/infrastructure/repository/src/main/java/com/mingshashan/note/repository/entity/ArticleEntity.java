@@ -17,7 +17,7 @@ import java.util.List;
 @TableName("note_article")
 @Setter
 @Getter
-public class ArticleEntity {
+public class ArticleEntity extends BaseEntity{
 
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;

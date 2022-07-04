@@ -1,6 +1,6 @@
 package com.mingshashan.note.domain.blog;
 
-import com.mingshashan.note.domain.blog.repository.ArticlePersistentRepository;
+import com.mingshashan.note.domain.blog.repository.ArticleRepository;
 import com.mingshashan.note.domain.blog.service.impl.ArticlePersistentServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,13 +15,13 @@ import java.util.Random;
 /**
  * @author mingshashan
  */
-public class ArticlePersistentServiceTest {
+public class ArticleServiceTest {
 
     @InjectMocks
     private ArticlePersistentServiceImpl articlePersistentService;
 
     @Mock
-    private ArticlePersistentRepository articlePersistentRepository;
+    private ArticleRepository articlePersistentRepository;
 
     @Before
     public void init() {

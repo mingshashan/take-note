@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mingshashan.note.repository.mapper.CategoryMapper">
+
+    <resultMap id="categoryEntityResultMap" type="com.mingshashan.note.repository.entity.CategoryEntity">
+
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+
+        <!-- common field -->
+        <id column="id" property="id"/>
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"
+                typeHandler="com.mingshashan.note.repository.handler.LocalDateTimeTypeHandler"/>
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"
+                typeHandler="com.mingshashan.note.repository.handler.LocalDateTimeTypeHandler"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator"/>
+        <result column="modifier" jdbcType="VARCHAR" property="modifier"/>
+        <result column="is_valid" jdbcType="TINYINT" property="isValid"/>
+
+    </resultMap>
+
+    <sql id="categoryFieldSql">
+        id, name, gmt_create, gmt_modified, creator, modifier, is_valid
+    </sql>
+    <insert id="createCategory" parameterType="com.mingshashan.note.repository.entity.CategoryEntity">
+        insert into note_article (
+        <include refid="categoryFieldSql"></include>
+        )
+        values (
+        #{categoryEntity.id},
+        #{categoryEntity.name},
+        #{categoryEntity.gmtCreate,jdbcType=TIMESTAMP},
+        #{categoryEntity.gmtModified,jdbcType=TIMESTAMP},
+        #{categoryEntity.creator},
+        #{categoryEntity.modifier},
+        #{categoryEntity.isValid}
+        )
+    </insert>
+
+    <delete id="deleteCategoryById"></delete>
+
+    <update id="deleteCategoryById">
+        update note_article set is_valid = ${@com.mingshashan.note.repository.util.RepositoryConstants@CURRENT_YEAR}
+        where id = #{id}
+    </update>
+
+    <update id="updateCategory" parameterType="com.mingshashan.note.repository.entity.CategoryEntity">
+        update note_article
+        set
+        name = #{categoryEntity.name},
+        <if test="categoryEntity.gmtModified != null">
+            gmt_modified = #{categoryEntity.gmtModified,jdbcType=TIMESTAMP},
+        </if>
+        <if test="categoryEntity.modifier != null">
+            modifier = #{categoryEntity.modifier}
+        </if>
+        where id = #{categoryEntity.id}
+    </update>
+
+    <select id="getCategoryById" resultMap="categoryEntityResultMap">
+        select
+        <include refid="categoryFieldSql"></include>
+        where id = #{id}
+    </select>
+</mapper>

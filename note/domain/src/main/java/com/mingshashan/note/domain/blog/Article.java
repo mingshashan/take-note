@@ -15,20 +15,39 @@ import java.util.List;
 @Getter
 public class Article {
 
+    /**
+     * id
+     */
     private String id;
 
-    private String name;
+    /**
+     * 作者id
+     */
+    private Author author;
 
-    private String author;
-
+    /**
+     * 标题
+     */
     private String title;
 
-    private String backgroundImage;
-
+    /**
+     * 内容
+     */
     private String content;
 
+    /**
+     * 背景图
+     */
+    private String backgroundImage;
+
+    /**
+     * 标签
+     */
     private List<Tag> tagList;
 
-    private List<Category> categoryList;
+    /**
+     * 类别
+     */
+    private Category category;
 
 }

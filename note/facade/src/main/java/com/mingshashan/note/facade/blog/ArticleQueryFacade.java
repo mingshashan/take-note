@@ -21,4 +21,6 @@ public interface ArticleQueryFacade {
      */
     Result<ArticleVO> getArticleById(@NotNull(message = "文章ID不能为空")
                                      @Positive(message = "文章ID必需为大于0的整数") Long articleId);
+
+    Result saveArticle(ArticleVO articleVO);
 }

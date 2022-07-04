@@ -1,8 +1,8 @@
 package com.mingshashan.note.domain.blog.service.impl;
 
 import com.mingshashan.note.domain.blog.Article;
-import com.mingshashan.note.domain.blog.repository.ArticlePersistentRepository;
-import com.mingshashan.note.domain.blog.service.IArticlePersistentService;
+import com.mingshashan.note.domain.blog.repository.ArticleRepository;
+import com.mingshashan.note.domain.blog.service.ArticlePersistentService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
  * @author mingshashan
  */
 @Service
-public class ArticlePersistentServiceImpl implements IArticlePersistentService {
-    private final ArticlePersistentRepository articlePersistentRepository;
+public class ArticlePersistentServiceImpl implements ArticlePersistentService {
+    private final ArticleRepository articlePersistentRepository;
 
-    public ArticlePersistentServiceImpl(ArticlePersistentRepository articlePersistentRepository) {
+    public ArticlePersistentServiceImpl(ArticleRepository articlePersistentRepository) {
         this.articlePersistentRepository = articlePersistentRepository;
     }
 
