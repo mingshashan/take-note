@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -20,8 +21,8 @@ public class ArticleVO {
     @NotBlank(message = "文章名称不能为空")
     private String name;
 
-    @NotBlank(message = "文章作者不能为空")
-    private String author;
+    @NotNull(message = "文章作者不能为空")
+    private Long authorId;
 
     private String title;
 

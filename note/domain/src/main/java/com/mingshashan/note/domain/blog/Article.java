@@ -23,7 +23,7 @@ public class Article {
     /**
      * 作者id
      */
-    private Author author;
+    private Long authorId;
 
     /**
      * 标题
