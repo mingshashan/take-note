@@ -6,6 +6,7 @@ import com.mingshashan.note.domain.blog.service.CategoryService;
 import com.mingshashan.note.facade.blog.CategoryFacade;
 import com.mingshashan.note.facade.service.converter.CategoryConverter;
 import com.mingshashan.note.facade.vo.blog.CategoryVO;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import javax.validation.constraints.Positive;
  */
 @RequestMapping("categories")
 @RestController
+@Api
 public class CategoryFacadeImpl implements CategoryFacade {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CategoryFacadeImpl.class);
