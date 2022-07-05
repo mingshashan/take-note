@@ -10,10 +10,28 @@ import com.mingshashan.note.facade.vo.blog.CategoryVO;
  */
 public interface CategoryFacade {
 
+    /**
+     * create category
+     *
+     * @param categoryVO
+     * @return
+     */
     Result<Void> createCategory(CategoryVO categoryVO);
 
+    /**
+     * delete category by id
+     *
+     * @param id
+     * @return
+     */
     Result<Void> deleteCategoryById(Long id);
 
+    /**
+     * get category by id
+     *
+     * @param id
+     * @return
+     */
     Result<CategoryVO> getCategoryById(Long id);
 
 }

@@ -34,7 +34,11 @@ public class Result<T> {
      */
     private T data;
 
-    private Result(int status, String code, String message, T data) {
+    public Result() {
+
+    }
+
+    public Result(int status, String code, String message, T data) {
         this.status = status;
         this.code = code;
         this.message = message;
