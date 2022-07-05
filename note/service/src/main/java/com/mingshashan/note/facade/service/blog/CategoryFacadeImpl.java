@@ -34,7 +34,7 @@ public class CategoryFacadeImpl implements CategoryFacade {
 
     @Override
     public Result<Void> createCategory(@NotNull @Valid CategoryVO categoryVO) {
-        LOGGER.info("createCategory name: {0}", categoryVO.getName());
+        LOGGER.info("createCategory name: {}", categoryVO.getName());
         Category category = CategoryConverter.INSTANCE.categoryVO2Category(categoryVO);
         categoryService.createCategory(category);
         return Result.ok();
@@ -42,13 +42,14 @@ public class CategoryFacadeImpl implements CategoryFacade {
 
     @Override
     public Result<Void> deleteCategoryById(@NotNull @Positive(message = "id必须为大于0的数") Long id) {
-        LOGGER.info("deleteCategoryById id = {0}", id);
+        LOGGER.info("deleteCategoryById id = {}", id);
         categoryService.deleteCategoryById(id);
         return Result.ok();
     }
 
     @Override
     public Result<CategoryVO> getCategoryById(@NotNull @Positive(message = "id必须为大于0的数") Long id) {
+        LOGGER.info("getCategoryById id = {}", id);
         Category category = categoryService.getCategoryById(id);
 
         CategoryVO categoryVO = CategoryConverter.INSTANCE.category2CategoryVO(category);

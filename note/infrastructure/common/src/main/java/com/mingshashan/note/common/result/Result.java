@@ -67,4 +67,8 @@ public class Result<T> {
     public static <T> Result<T> ok() {
         return Result.ok(null);
     }
+
+    public T getData() {
+        return data;
+    }
 }
