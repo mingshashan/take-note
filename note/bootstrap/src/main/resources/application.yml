@@ -5,9 +5,9 @@ spring:
   profiles:
     active: local
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/note?currentSchema=take-note
-    username: postgres
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.75.138:3306/take_note_dev
+    username: build
     password: '000000'
 
 logging:

@@ -5,6 +5,8 @@ import com.mingshashan.note.repository.entity.CategoryEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface CategoryEntityConverter {
 
@@ -24,6 +26,7 @@ public interface CategoryEntityConverter {
      * @param categoryEntity
      * @return
      */
-    //     @Mapping(source = "numberOfSeats", target = "seatCount")
     Category categoryEntity2Category(CategoryEntity categoryEntity);
+
+    List<Category> entityList2CategoryList(List<CategoryEntity> categoryEntityList);
 }

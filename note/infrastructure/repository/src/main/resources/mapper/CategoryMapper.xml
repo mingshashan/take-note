@@ -4,10 +4,9 @@
 
     <resultMap id="categoryEntityResultMap" type="com.mingshashan.note.repository.entity.CategoryEntity">
 
-        <result column="name" jdbcType="VARCHAR" property="name"/>
-
-        <!-- common field -->
         <id column="id" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <!-- common field -->
         <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate"
                 typeHandler="com.mingshashan.note.repository.handler.LocalDateTimeTypeHandler"/>
         <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified"
@@ -19,7 +18,8 @@
     </resultMap>
 
     <sql id="categoryFieldSql">
-        id, name, gmt_create, gmt_modified, creator, modifier, is_valid
+        id
+        , name, gmt_create, gmt_modified, creator, modifier, is_valid
     </sql>
     <insert id="createCategory" parameterType="com.mingshashan.note.repository.entity.CategoryEntity">
         insert into note_article (
@@ -39,7 +39,8 @@
     <delete id="deleteCategoryById"></delete>
 
     <update id="deleteCategoryById">
-        update note_article set is_valid = ${@com.mingshashan.note.repository.util.RepositoryConstants@CURRENT_YEAR}
+        update note_article
+        set is_valid = ${@com.mingshashan.note.repository.util.RepositoryConstants@CURRENT_YEAR}
         where id = #{id}
     </update>
 
@@ -59,6 +60,16 @@
     <select id="getCategoryById" resultMap="categoryEntityResultMap">
         select
         <include refid="categoryFieldSql"></include>
+        from note_article
         where id = #{id}
+    </select>
+
+    <select id="queryCategory" resultMap="categoryEntityResultMap">
+        select
+        <include refid="categoryFieldSql"></include>
+        from note_article
+        order id
+        limit #{size}
+        offset ${(page-1)*size}
     </select>
 </mapper>

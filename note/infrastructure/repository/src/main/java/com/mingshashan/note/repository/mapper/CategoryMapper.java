@@ -2,8 +2,16 @@ package com.mingshashan.note.repository.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mingshashan.note.repository.entity.CategoryEntity;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+/**
+ * category mapper
+ * @author mingshashan
+ */
+@Mapper
 public interface CategoryMapper extends BaseMapper<CategoryEntity> {
 
     /**
@@ -35,4 +43,12 @@ public interface CategoryMapper extends BaseMapper<CategoryEntity> {
      * @return
      */
     CategoryEntity getCategoryById(@Param("id") Long id);
+
+    /**
+     * page query category
+     * @param page
+     * @param size
+     * @return
+     */
+    List<CategoryEntity> queryCategory(@Param("page") int page, @Param("size") int size);
 }

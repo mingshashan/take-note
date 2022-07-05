@@ -1,5 +1,6 @@
 package com.mingshashan.note.domain.blog.repository;
 
+import com.mingshashan.note.common.result.Page;
 import com.mingshashan.note.domain.blog.Category;
 
 /**
@@ -25,6 +26,8 @@ public interface CategoryRepository {
 
     /**
      * update category
+     *
+     * @param category
      */
     void updateCategory(Category category);
 
@@ -32,11 +35,16 @@ public interface CategoryRepository {
      * get category by id
      *
      * @param id
+     * @return
      */
     Category getCategoryById(Long id);
 
     /**
-     * list page category
+     * page query category
+     *
+     * @param page
+     * @param size
+     * @return
      */
-    void listCategory();
+    Page<Category> queryCategory(int page, int size);
 }

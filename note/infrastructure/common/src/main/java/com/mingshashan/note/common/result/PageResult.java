@@ -36,6 +36,10 @@ public class PageResult<T> implements Page<T> {
 
     private final List<T> content = new ArrayList<>();
 
+    public static PageResult empty() {
+        return new PageResult(null, 0, 0, 0);
+    }
+
     public PageResult(List<T> content, int page, int size, long total) {
         this.content.addAll(content);
         this.page = Math.max(page, 0);
