@@ -1,24 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="团团"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <hello-world msg="团团" />
   <div>团团</div>
 </template>
 
 <script lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>
-
-<style lang="scss" scoped>
-  $color: #f00;
-  div {
-    display: flex;
-    color: $color
-  }
-</style>
