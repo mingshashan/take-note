@@ -14,31 +14,6 @@ import java.util.List;
 public interface UserMapper extends BaseMapper<UserEntity> {
 
     /**
-     * create user
-     *
-     * @param userEntity
-     * @return
-     */
-    int createUser(@Param("userEntity") UserEntity userEntity);
-
-    /**
-     * update user
-     *
-     * @param userEntity
-     * @return
-     */
-    int updateUser(@Param("userEntity") UserEntity userEntity);
-
-    /**
-     * delete user
-     *
-     * @param id
-     * @return
-     */
-    void deleteUser(@Param("id") Long id);
-
-
-    /**
      * search user
      *
      * @param userEntity
