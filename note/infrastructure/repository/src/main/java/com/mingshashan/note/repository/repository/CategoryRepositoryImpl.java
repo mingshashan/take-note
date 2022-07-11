@@ -1,4 +1,4 @@
-package com.mingshashan.note.repository.article;
+package com.mingshashan.note.repository.repository;
 
 import com.baomidou.mybatisplus.core.conditions.ISqlSegment;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;

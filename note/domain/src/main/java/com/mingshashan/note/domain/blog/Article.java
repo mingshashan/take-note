@@ -23,7 +23,7 @@ public class Article {
     /**
      * 作者id
      */
-    private Long authorId;
+    private Author author;
 
     /**
      * 标题
@@ -48,6 +48,6 @@ public class Article {
     /**
      * 类别
      */
-    private Category category;
+    private List<Category> categoryList;
 
 }

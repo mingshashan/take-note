@@ -1,23 +1,21 @@
 package com.mingshashan.note.domain.admin.service;
 
+import com.mingshashan.note.common.result.Page;
 import com.mingshashan.note.domain.admin.User;
-import org.springframework.stereotype.Component;
 
 /**
  * user domain service
  *
  * @author mingshashan
  */
-@Component
-public class UserService {
 
-    public User createUser(User user) {
+public interface UserService {
 
-        return null;
-    }
+    Long createUser(User user);
 
-    public User updateUser(User user) {
+    void updateUser(User user);
 
-        return null;
-    }
+    void deleteUser(Long id);
+
+    Page<User> searchUser();
 }
