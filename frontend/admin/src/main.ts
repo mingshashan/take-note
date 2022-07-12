@@ -1,12 +1,17 @@
 import { createApp } from 'vue';
-import { Button } from 'tdesign-vue-next';
+
+import TDesign from 'tdesign-vue-next';
 import 'tdesign-vue-next/es/style/index.css';
-// import {store, key} from './store'
+
+import { store } from './store';
+import router from './router';
+import '@/style/index.less';
+
 import App from './App.vue';
-import router from './router/index';
 
 const app = createApp(App);
-app.use(Button);
+
+app.use(TDesign);
 app.use(router);
-// app.use(store, key)
+app.use(store);
 app.mount('#app');
