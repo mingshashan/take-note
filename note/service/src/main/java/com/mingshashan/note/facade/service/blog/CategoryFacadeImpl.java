@@ -7,6 +7,7 @@ import com.mingshashan.note.facade.blog.CategoryFacade;
 import com.mingshashan.note.facade.service.converter.CategoryConverter;
 import com.mingshashan.note.facade.vo.blog.CategoryVO;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,7 @@ public class CategoryFacadeImpl implements CategoryFacade {
         this.categoryService = categoryService;
     }
 
+    @ApiOperation("createCategory")
     @Override
     public Result<Void> createCategory(@NotNull @Valid CategoryVO categoryVO) {
         LOGGER.info("createCategory name: {}", categoryVO.getName());

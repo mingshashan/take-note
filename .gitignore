@@ -30,3 +30,4 @@ target
 note/facade/target/generated-sources/
 */target/*
 note/facade/target/*
+log/

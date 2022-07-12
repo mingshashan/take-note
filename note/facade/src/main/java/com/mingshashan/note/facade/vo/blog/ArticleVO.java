@@ -1,5 +1,6 @@
 package com.mingshashan.note.facade.vo.blog;
 
+import com.mingshashan.note.facade.validation.ValidationGroup;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,12 +19,13 @@ import java.util.List;
 @ToString
 public class ArticleVO {
 
-    @NotBlank(message = "文章名称不能为空")
-    private String name;
+    @NotNull(groups = {ValidationGroup.Update.class}, message = "更新文章，文章id不能为空")
+    private Long id;
 
     @NotNull(message = "文章作者不能为空")
     private Long authorId;
 
+    @NotBlank(message = "文章名称不能为空")
     private String title;
 
     @ToString.Exclude

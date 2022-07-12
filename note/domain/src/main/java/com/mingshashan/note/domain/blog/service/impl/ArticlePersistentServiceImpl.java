@@ -19,8 +19,11 @@ public class ArticlePersistentServiceImpl implements ArticlePersistentService {
     }
 
     @Override
-    public void createArticle(Article article) {
+    public Long createArticle(Article article) {
 
+
+
+        return null;
     }
 
     @Override

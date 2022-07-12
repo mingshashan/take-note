@@ -13,8 +13,9 @@ public interface ArticlePersistentService {
      * create article
      *
      * @param article
+     * @return articleId
      */
-    void createArticle(Article article);
+    Long createArticle(Article article);
 
     /**
      * udpate article

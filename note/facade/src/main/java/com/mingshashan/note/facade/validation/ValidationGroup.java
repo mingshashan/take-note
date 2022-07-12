@@ -1,5 +1,10 @@
-package com.mingshashan.note.facade.service.validation;
+package com.mingshashan.note.facade.validation;
 
+/**
+ * validation group
+ *
+ * @author mingshashan
+ */
 public class ValidationGroup {
 
     public interface Create extends javax.validation.groups.Default {

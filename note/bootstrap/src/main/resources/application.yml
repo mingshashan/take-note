@@ -9,6 +9,9 @@ spring:
     url: jdbc:mysql://192.168.75.138:3306/take_note_dev
     username: build
     password: '000000'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 logging:
   config: classpath:log4j2.xml
@@ -27,3 +30,5 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
+
+debug: true
